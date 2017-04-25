@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<export>
+  <info>
+    <creator>Admin</creator>
+    <opencms_version>10.0.1</opencms_version>
+    <createdate>Thu Apr 06 11:10:05 CEST 2017</createdate>
+    <infoproject>Offline</infoproject>
+    <export_version>10</export_version>
+  </info>
+  <module>
+    <name>foo.bar</name>
+    <nicename>Auto-generated name</nicename>
+    <class />
+    <export-mode name='default' />
+    <version>1</version>
+    <authorname>CodeDroids Aps</authorname>
+    <authoremail>info@codedroids.dk</authoremail>
+    <datecreated />
+    <userinstalled />
+    <dateinstalled />
+    <dependencies />
+    <exportpoints>
+      <exportpoint uri='/system/modules/foo.bar/lib/' destination='WEB-INF/lib/' />
+      <exportpoint uri='/system/modules/foo.bar/classes/' destination='WEB-INF/classes/' />
+    </exportpoints>
+    <resources />
+    <excluderesources />
+    <parameters />
+    <resourcetypes />
+    <explorertypes />
+  </module>
+  <files />
+</export>

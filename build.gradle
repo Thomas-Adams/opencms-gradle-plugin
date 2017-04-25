@@ -1,0 +1,47 @@
+apply plugin: 'groovy'
+apply plugin: 'java-gradle-plugin'
+apply plugin: 'maven'
+
+group 'dk.codedroids.oc.gradle'
+// name is set to rootProject.name (defined in settings.gradle)
+version '0.7'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven { url "http://oss.sonatype.org/content/repositories/snapshots/" } // spock rc
+}
+
+dependencies {
+    // Plug in
+    compile gradleApi()
+    compile localGroovy()
+    // Tasks
+    compile group:'org.safehaus.jug', name:'jug', version:'2.0.0', classifier:'lgpl'
+    // Test
+//    testCompile gradleTestKit()
+    testCompile 'junit:junit:4.12'
+    testCompile ("org.spockframework:spock-core:1.1-groovy-2.4-rc-4") {
+        // To avoid this exception:
+        // Conflicting module versions. Module [groovy-all is loaded in version 2.4.7 and you are trying to load version 2.4.6
+        exclude module: 'groovy-all'
+    }
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            // actual jars ends up here, though ~/.m2 still seems to be updated with meta info
+            repository(url: "file://${System.properties['user.home']}/local-repos")
+        }
+    }
+}
+
+artifacts {
+    archives jar
+}
+
+test {
+    maxHeapSize = "512m"
+}

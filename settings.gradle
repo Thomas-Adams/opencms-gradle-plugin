@@ -1,0 +1,2 @@
+// Also becomes the name part of the maven id:
+rootProject.name = 'opencms-plugin'
