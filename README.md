@@ -160,7 +160,7 @@ Legacy setting - enables compilation of both Java and Groovy code (required for 
 
 Gradle's **groovy**-plugin accepts both Groovy and Java in the `src/main/groovy` folder so in this case it is not needed.
 
-##Virtual Filesystem properties
+## Virtual Filesystem properties
 
 OpenCms' VFS allows for setting properties on the files and folders. In order to mimic this you can provide **meta** files which 
 the `moduleManifest` task then read and inserts into the resulting `manifest.xml`, OpenCms' will then set the properties of
