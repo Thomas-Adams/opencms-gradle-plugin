@@ -33,7 +33,7 @@ uploadArchives {
     repositories {
         mavenDeployer {
             // actual jars ends up here, you need to set the MAVEN_REPO environment variable accordingly
-            repository(url: "file://${System.properties['MAVEN_REPO']}")
+            repository(url: "file://${System.properties['MAVEN_REPO']}/")
         }
     }
 }

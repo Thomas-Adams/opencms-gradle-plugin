@@ -19,7 +19,8 @@ The 'root' should look like this with whatever relevant folders is needed inside
 
 ## Usage
 
-Per default `./gradlew uploadArchives` will publish to a local archive (as defined in the included `build.gradle` file).
+Per default `./gradlew uploadArchives` will publish to a local archive (as defined in the included `build.gradle` file 
+as environment variable `MAVEN_REPO`).
 
 After that step, you can use the plugin in your own projects.
 
@@ -28,7 +29,7 @@ Your **build.gradle** should include something like the following:
 ```
 buildscript {
     repositories {
-        maven { url uri( "file://${System.properties['user.home']}/local-repos/" ) }
+        maven { url uri( "file://${System.properties['MAVEN_REPO']}/" ) }
         mavenCentral()
     }
     dependencies {
