@@ -32,8 +32,8 @@ dependencies {
 uploadArchives {
     repositories {
         mavenDeployer {
-            // actual jars ends up here, though ~/.m2 still seems to be updated with meta info
-            repository(url: "file://${System.properties['user.home']}/local-repos")
+            // actual jars ends up here, you need to set the MAVEN_REPO environment variable accordingly
+            repository(url: "file://${System.properties['MAVEN_REPO']}")
         }
     }
 }
